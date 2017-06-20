@@ -1,6 +1,6 @@
 {
   "name": "pseudoromanian-generator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Paul Nechifor <paul@nechifor.net> (http://nechifor.net/)",
   "description": "Text generator similar to Lorem Ipsum, but with Romanian letters.",
   "main": "./lib",
