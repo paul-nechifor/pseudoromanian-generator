@@ -1,3 +1,5 @@
+# Very old code.
+#
 silabe = [[1667468, "a"], [1487637, "de"], [948458, "te"], [907274, "în"],
 [793207, "e"], [673170, "și"], [638112, "ca"], [594429, "re"], [498252, "la"],
 [494631, "o"], [472142, "din"], [411278, "cu"], [384897, "li"], [366839, "le"],
@@ -152,7 +154,7 @@ sumaSilabe = 0
 sumaNrSilabe = 0
 sumaParti = 0
 
-main = ->
+init = ->
   i = 0
   len = silabe.length
   while i < len
@@ -171,14 +173,10 @@ main = ->
     sumaParti += parti[i][0]
     i++
 
-  $('#generateNewBtn').click -> generateNew()
-
-  generateNew()
-
 rand = (min, max) ->
   Math.floor(Math.random() * (max - min + 1)) + min
 
-silaba = ->
+exports.silaba = silaba = ->
   nr = Math.floor((Math.random() * sumaSilabe))
   a = 0
   i = 0
@@ -190,7 +188,7 @@ silaba = ->
   throw 'This is bad.'
   return
 
-parte = ->
+exports.parte = parte = ->
   nr = Math.floor((Math.random() * sumaParti))
   a = 0
   i = 0
@@ -202,7 +200,7 @@ parte = ->
   throw 'This is bad.'
   return
 
-cuvant = ->
+exports.cuvint = cuvant = ->
   nr = Math.floor Math.random() * sumaNrSilabe
   a = 0
   cuv = undefined
@@ -223,20 +221,20 @@ cuvant = ->
 
       # Niciun cuvânt nu se termină în „â“.
       if cuv.substring(cuv.length - 1) is 'â'
-        cuv = cuv.substring(0, cuv.length - 1) + 'î' 
+        cuv = cuv.substring(0, cuv.length - 1) + 'î'
       return cuv
     i++
   throw 'This is bad.'
   return
 
-nume = ->
+exports.nume = nume = ->
   cuv = undefined
   loop
     cuv = cuvant()
     break unless cuv.length < 4
   cuv[0].toUpperCase() + cuv.substring(1)
 
-cuvinte = ->
+exports.cuvinte = cuvinte = ->
   n = Math.floor(Math.random() * 4)
   ret = cuvant()
   i = 0
@@ -246,7 +244,7 @@ cuvinte = ->
     i++
   ret
 
-numar = ->
+exports.numar = numar = ->
   sansa = rand(1, 100)
   if sansa < 30
     rand 0, 9
@@ -266,7 +264,7 @@ numar = ->
       i++
     ret
 
-propozitie = ->
+exports.propozitie = propozitie = ->
   ret = nume()
   cat = rand(1, 6)
   p = undefined
@@ -303,7 +301,7 @@ propozitie = ->
     ret += '…'
   ret
 
-alineat = ->
+exports.alineat = alineat = ->
   ret = propozitie()
   n = rand(0, 8)
   i = 0
@@ -312,7 +310,7 @@ alineat = ->
     i++
   '<p>' + ret + '</p>'
 
-tot = ->
+exports.tot = tot = ->
   ret = ''
   n = rand(8, 20)
   i = 0
@@ -321,7 +319,4 @@ tot = ->
     i++
   ret
 
-generateNew = ->
-  $('#generatedText').html tot()
-
-$(document).ready main
+init()

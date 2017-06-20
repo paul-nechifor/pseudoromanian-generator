@@ -1,18 +1,28 @@
 {
-  "name": "pseudoromanian",
-  "version": "0.1.0",
+  "name": "pseudoromanian-generator",
+  "version": "0.0.0",
   "author": "Paul Nechifor <paul@nechifor.net> (http://nechifor.net/)",
+  "description": "Text generator similar to Lorem Ipsum, but with Romanian letters.",
+  "main": "./lib",
   "scripts": {
-    "build": "intercessor",
-    "start": "node build/app.js",
-    "up": "npm install && npm run build && npm run start"
+    "build": "rm -fr lib; coffee -cbo lib src",
+    "test": "mocha --compilers coffee:coffee-script/register"
   },
-  "dependencies": {
-    "intercessor": ">=0.3.2"
+  "devDependencies": {
+    "coffee-script": "^1.12.6"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/paul-nechifor/pseudoromanian"
+    "url": "git+https://github.com/paul-nechifor/pseudoromanian-generator.git"
   },
-  "license": "MIT"
+  "keywords": [
+    "lorem",
+    "ipsum",
+    "romanian"
+  ],
+  "bugs": {
+    "url": "https://github.com/paul-nechifor/pseudoromanian-generator/issues"
+  },
+  "homepage": "https://github.com/paul-nechifor/pseudoromanian-generator#readme",
+  "license": "ISC"
 }

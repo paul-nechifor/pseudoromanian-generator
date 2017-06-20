@@ -1,20 +1,21 @@
-# Pseudoromanian
+# Pseudoromanian generator
 
 Text generator similar to Lorem Ipsum, but with Romanian letters.
 
-![Pseudoromanian cover.](screenshot.png)
-
 ## Usage
 
-Clone this repo. Build and run it by typing:
+Install the dependencies:
 
-    npm run up
+    npm install
 
-Go to [localhost:3000](http://localhost:3000) to see it. See other [supported
-commands][sc].
+Build the generated code from CoffeeScript file:
+
+    npm run build
+
+Run the tests.
+
+    npm test
 
 ## License
 
-MIT
-
-[sc]: https://github.com/paul-nechifor/intercessor#supported-commands
+ISC
