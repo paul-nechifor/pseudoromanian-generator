@@ -1,3 +1,7 @@
+# This repository has been moved to [gitlab.com/paul-nechifor/pseudoromanian-generator](http://gitlab.com/paul-nechifor/pseudoromanian-generator).
+
+Old readme:
+
 # Pseudoromanian generator
 
 Text generator similar to Lorem Ipsum, but with Romanian letters.
